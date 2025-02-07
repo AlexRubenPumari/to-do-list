@@ -12,12 +12,12 @@
   padding-bottom: 0.1em;
 }
 .btnClose:hover {
-  outline: 4px solid hsla(0, 0%, 100%, 0.4);
+  outline: 4px solid currentColor;
 }
 
 .modal {
   width: 14rem;
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 0.4em;
   background-color: white;
   color: black;
@@ -36,11 +36,23 @@
   align-items: flex-start;
   gap: 1rem;
 }
-.modal__btn {
+.modal__btnClose {
   position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 2.2rem;
+}
+.modal__btnCta {
+  margin: 1.5rem auto 0;
+}
+
+.btn--cta {
+  background-color: hsl(177, 11%, 34%);
+  color: white;
+  font-weight: bold;
+}
+.btn--cta:hover {
+  background-color: hsl(177, 11%, 24%);
 }
 
 /*# sourceMappingURL=App.css.map */

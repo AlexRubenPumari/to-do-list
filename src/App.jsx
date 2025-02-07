@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Modal isModalToClose initialIsOpen callback={newName => setName(newName)}/>
-      <h1>Bienvenido {name}!</h1>
+      <h1>Bienvenido, {name}!</h1>
       <TaskContainer />
     </>
   )

@@ -1,5 +1,7 @@
 :root {
   --co-gray-30: hsl(177, 11%, 34%);
+  --co-primary-text: hsl(0, 0%, 8%);
+  --co-secondary-text: hsl(0, 0, 91%);
 }
 * {
   margin: 0;
@@ -11,6 +13,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
+  color: var(--co-primary-text);
 }
 button {
   display: flex;
@@ -21,6 +24,7 @@ button {
   border: none;
   border-radius: 0.4em;
 
+  transition: 200ms background-color;
   cursor: pointer;
 }
 *::after {
