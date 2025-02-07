@@ -1,0 +1,51 @@
+@use './config.scss';
+
+.btnClose {
+	width: 1.35em;
+	padding: 0;
+	aspect-ratio: 1/1;
+	border-radius: config.$border-r-m;
+	background-color: transparent;
+	color: hsla(0, 0%, 100%, 0.4);
+	outline: 4px solid transparent;
+	transition: 200ms outline;
+	&__symbol {
+		padding-bottom: .1em;
+	}
+	&:hover {
+		outline: 4px solid hsla(0, 0%, 100%, 0.4);
+	}
+}
+
+
+.modal {
+	width: 14rem;
+	padding: 2.5rem 1rem;
+	border-radius: config.$border-r-m;
+
+	background-color: white;
+	color: black;
+	&__overlay {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+		position: fixed;
+    inset: 0;
+    
+    background-color: hsla(0, 0%, 0%, 0.7);
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+	&__btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+
+		font-size: 2.2rem;
+	}
+}
+

@@ -1,12 +1,18 @@
 import './styles/App.css'
 
+import { useState } from 'react'
+import Modal from './components/Modal.jsx'
+import TaskContainer from './components/TaskContainer.jsx'
+
 function App() {
+  const [name, setName] = useState('Invitado')
+
   return (
-    <div className='modal__overlay'>
-      <div className='modal'>
-        <h1>Hola mundo</h1>
-      </div>
-    </div>
+    <>
+      <Modal isModalToClose initialIsOpen callback={newName => setName(newName)}/>
+      <h1>Bienvenido {name}!</h1>
+      <TaskContainer />
+    </>
   )
 }
 

@@ -1,0 +1,49 @@
+:root {
+  --co-gray-30: hsl(177, 11%, 34%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 0.4em;
+
+  cursor: pointer;
+}
+*::after {
+  display: block;
+  position: absolute;
+  content: '';
+}
+label {
+  font-size: 0.9em;
+}
+input {
+  width: 100%;
+  position: relative;
+  padding-bottom: 0.3em;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: border-color 160ms;
+  font-size: inherit;
+}
+input:focus {
+  outline: none;
+  border-color: var(--co-gray-30);
+}
+input::placeholder {
+  font-size: 1em;
+}
