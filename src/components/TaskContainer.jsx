@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Modal from './Modal.jsx'
 import Prompt from './Prompt.jsx'
+import Task from './Task.jsx'
 
 export default function TaskContainer() {
   const [tasks, setTasks] = useState([])
@@ -28,19 +29,19 @@ export default function TaskContainer() {
           </Modal>
         )
       }
-      <div className="taskContainer">
+      <section className="taskContainer">
         <div className="taskContainer__body">
           {
-            tasks.map(task => (<section key={task}>{task}</section>))
+            tasks.map(task => (<Task key={task}>{task}</Task>))
           }
         </div>
         <button 
-          className='btn--primary' 
+          className='btn--cta' 
           onClick={() => setIsModalOpen(!isModalOpen)}
         >
           Agregar tarea
         </button>
-      </div>
+      </section>
     </>
   )
 }

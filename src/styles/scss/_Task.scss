@@ -1,0 +1,25 @@
+@use './config.scss';
+
+.task {
+	$taskHeight: 2.2em;
+	
+	height: $taskHeight;
+	padding-left: 1.5em;
+	border-radius: calc($taskHeight*.5) / 50%;
+	
+	line-height: $taskHeight;
+	font-size: 1rem;
+	background-color: config.$color-1;
+	transition: 200ms background-color;
+	user-select: none;
+	cursor: pointer;
+
+	&:hover {
+		background-color: config.$color-1-h
+	}
+	&.marked {
+		text-decoration: line-through;
+		background-color: hsl(0, 0%, 95%);
+		cursor: default;
+	}
+}

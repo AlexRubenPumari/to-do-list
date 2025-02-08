@@ -27,7 +27,7 @@ export default function App() {
           </Modal>
         )
       }
-      <h1>Bienvenido, {name ?? 'Invitado'}!</h1>
+      <h1 style={{ textAlign: 'center' }}>Bienvenido, {name ?? 'Invitado'}!</h1>
       <TaskContainer />
     </>
   )

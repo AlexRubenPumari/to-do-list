@@ -1,26 +1,8 @@
-.btnClose {
-  width: 1.35em;
-  padding: 0;
-  aspect-ratio: 1/1;
-  border-radius: 0.4em;
-  background-color: transparent;
-  color: hsla(0, 0%, 100%, 0.4);
-  outline: 4px solid transparent;
-  transition: 200ms outline;
-}
-.btnClose__symbol {
-  padding-bottom: 0.1em;
-}
-.btnClose:hover {
-  outline: 4px solid currentColor;
-}
-
 .modal {
   width: 14rem;
   padding: 2rem 1rem;
   border-radius: 0.4em;
-  background-color: white;
-  color: black;
+  background-color: hsl(0, 0%, 92%);
 }
 .modal__overlay {
   display: flex;
@@ -46,13 +28,64 @@
   margin: 1.5rem auto 0;
 }
 
+.task {
+  height: 2.2em;
+  padding-left: 1.5em;
+  border-radius: 1.1em/50%;
+  line-height: 2.2em;
+  font-size: 1rem;
+  background-color: hsl(38, 65%, 82%);
+  transition: 200ms background-color;
+  user-select: none;
+  cursor: pointer;
+}
+.task:hover {
+  background-color: hsl(38, 65%, 68%);
+}
+.task.marked {
+  text-decoration: line-through;
+  background-color: hsl(0, 0%, 95%);
+  cursor: default;
+}
+
+.btnClose {
+  width: 1.35em;
+  padding: 0;
+  aspect-ratio: 1/1;
+  border-radius: 0.4em;
+  background-color: transparent;
+  color: hsla(0, 0%, 100%, 0.4);
+  outline: 4px solid transparent;
+  transition: 200ms outline;
+}
+.btnClose__symbol {
+  padding-bottom: 0.1em;
+}
+.btnClose:hover {
+  outline: 4px solid currentColor;
+}
+
 .btn--cta {
   background-color: hsl(177, 11%, 34%);
-  color: white;
+  color: hsl(0, 0%, 92%);
   font-weight: bold;
 }
 .btn--cta:hover {
   background-color: hsl(177, 11%, 24%);
+}
+
+.taskContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.taskContainer__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-width: 20rem;
 }
 
 /*# sourceMappingURL=App.css.map */

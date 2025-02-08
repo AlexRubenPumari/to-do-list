@@ -2,8 +2,12 @@ $border-r-m: .4em;
 
 $co-gray-30: hsl(177, 11%, 34%); 
 $co-gray-20: hsl(177, 11%, 24%);
+$co-white-90: hsl(0, 0%, 92%);
+$co-pink-80: hsl(38, 65%, 82%);
+$co-pink-60: hsl(38, 65%, 68%);
 
-$color-1: 0;
+$color-1: $co-pink-80;
+$color-1-h: $co-pink-60;
 $color-2: 0;
 $color-3: 0;
 $color-4: $co-gray-30;
