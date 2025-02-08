@@ -1,17 +1,16 @@
-import { useState } from 'react'
 import ButtonClose from './ButtonClose.jsx'
-
-
 
 export default function Modal({ 
                                 isModalToClose, 
-                                toggleModal, 
+                                onClose,
+                                isOpen, 
                                 children 
                               }) {
+  if (!isOpen) return null
   return (
     <div className='modal__overlay'>
 			{isModalToClose && <ButtonClose 
-                          callback={toggleModal} 
+                          callback={onClose} 
                           context='modal__btnClose' 
                        />
       }

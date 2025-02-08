@@ -15,18 +15,17 @@ export default function App() {
 
   return (
     <>
-      {
-        isModalOpen && (
-          <Modal isModalToClose 
-                 toggleModal={() => setIsModalOpen(!isModalOpen)}
-          >
-            <Prompt label='Nombre' 
-                    buttonText='Continuar' 
-                    callback={changeName} 
-            />
-          </Modal>
-        )
-      }
+      <Modal 
+             isOpen={isModalOpen}
+             isModalToClose 
+             onClose={() => setIsModalOpen(false)}
+      >
+        <Prompt label='Nombre' 
+                buttonText='Continuar' 
+                callback={changeName} 
+        />
+      </Modal>
+
       <h1 style={{ textAlign: 'center' }}>Bienvenido, {name ?? 'Invitado'}!</h1>
       <TaskContainer />
     </>

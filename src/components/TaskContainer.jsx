@@ -16,19 +16,17 @@ export default function TaskContainer() {
 
   return (
     <>
-      {
-        isModalOpen && (
-          <Modal 
-            isModalToClose
-            toggleModal={() => setIsModalOpen(!isModalOpen)}
-          >
-            <Prompt label='Tarea' 
-                    buttonText='Agregar' 
-                    callback={addTask} 
-            />
-          </Modal>
-        )
-      }
+      <Modal
+        isOpen={isModalOpen} 
+        isModalToClose
+        onClose={() => setIsModalOpen(false)}
+      >
+        <Prompt label='Tarea' 
+                buttonText='Agregar' 
+                callback={addTask} 
+        />
+      </Modal>
+
       <section className="taskContainer">
         <div className="taskContainer__body">
           {
@@ -37,7 +35,7 @@ export default function TaskContainer() {
         </div>
         <button 
           className='btn--cta' 
-          onClick={() => setIsModalOpen(!isModalOpen)}
+          onClick={() => setIsModalOpen(true)}
         >
           Agregar tarea
         </button>
