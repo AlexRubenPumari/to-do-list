@@ -2,6 +2,8 @@
   --co-gray-30: hsl(177, 11%, 34%);
   --co-primary-text: hsl(0, 0%, 8%);
   --co-secondary-text: hsl(0, 0, 91%);
+  --fs-primary: 1rem;
+  --fs-secondary: .9rem; 
 }
 * {
   margin: 0;
@@ -12,7 +14,7 @@
 }
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
+  font-size: var(--fs-primary);
   color: var(--co-primary-text);
 }
 button {
@@ -34,7 +36,7 @@ button {
   content: '';
 }
 label {
-  font-size: 0.9em;
+  font-size: var(--fs-secondary);
 }
 input {
   width: 100%;

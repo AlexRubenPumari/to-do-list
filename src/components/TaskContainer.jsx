@@ -21,9 +21,11 @@ export default function TaskContainer() {
         isModalToClose
         onClose={() => setIsModalOpen(false)}
       >
-        <Prompt label='Tarea' 
-                buttonText='Agregar' 
-                callback={addTask} 
+        <Prompt 
+          hasValidation
+          label='Tarea' 
+          buttonText='Agregar' 
+          callback={addTask} 
         />
       </Modal>
 

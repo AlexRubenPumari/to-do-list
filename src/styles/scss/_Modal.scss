@@ -8,19 +8,11 @@
 
 	&__overlay {
     $co-black-90-o-7: hsla(0, 0%, 0%, 0.7); 
-		display: flex;
-    justify-content: center;
-    align-items: center;
+		@extend %flex-center;
 		position: fixed;
     inset: 0;
 
     background-color: $co-black-90-o-7;
-	}
-	&__content {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 1rem;
 	}
 	&__btnClose {
 		position: absolute;
@@ -28,8 +20,5 @@
 		right: 1rem;
 
 		font-size: 2.2rem;
-	}
-	&__btnCta {
-		margin: 1.5rem auto 0;
 	}
 }

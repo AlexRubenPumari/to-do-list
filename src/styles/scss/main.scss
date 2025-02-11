@@ -1,6 +1,7 @@
 @use './config.scss';
 @use './Modal.scss';
 @use './Task.scss';
+@use './Prompt.scss';
 
 .btnClose {
 	$co-black-o-40: hsla(0, 0%, 100%, 0.4);

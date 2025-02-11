@@ -1,0 +1,23 @@
+.prompt {
+	display: flex;
+  flex-direction: column;
+
+	&__label {
+		margin-bottom: .5rem;
+	}
+	&__inputContainer {
+    position: relative;
+		margin-bottom: 1rem;
+		padding-bottom: 1.5rem;
+	}
+	&__textValidation {
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+		color: red;
+		font-size: var(--fs-secondary);
+	}
+	&__btnCta {
+		margin: 0 auto;
+	}
+}

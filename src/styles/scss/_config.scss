@@ -13,3 +13,9 @@ $color-3: 0;
 $color-4: $co-gray-30;
 $color-4-h: $co-gray-20;
 $color-5: 0;
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
