@@ -1,8 +1,8 @@
-import '../styles/App.css'
+import './styles/App.css'
 import { useState } from 'react'
-import Modal from './Modal.jsx'
-import TaskContainer from './TaskContainer.jsx'
-import Prompt from './Prompt.jsx'
+import Modal from './components/Modal.jsx'
+import TaskContainer from './components/TaskContainer.jsx'
+import Prompt from './components/Prompt.jsx'
 
 
 export default function App() {
