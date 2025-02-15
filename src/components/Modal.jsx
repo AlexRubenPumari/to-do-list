@@ -14,9 +14,9 @@ export default function Modal({
                           context='modal__btnClose' 
                        />
       }
-      <div className='modal'>
+      <form className='modal' onSubmit={e => e.preventDefault()}>
         { children }
-      </div>
+      </form>
     </div>
   )
 }

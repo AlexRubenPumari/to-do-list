@@ -34,7 +34,7 @@ export default function Prompt({ label, buttonText, hasValidation, callback }) {
         }
       </div>
 
-      <button onClick={handleClick} className='btn--cta prompt__btnCta'>
+      <button type='submit' onClick={handleClick} className='btn--cta prompt__btnCta'>
         {buttonText}
       </button>
     </div>
