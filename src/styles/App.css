@@ -13,6 +13,7 @@
 .modal__overlay {
   position: fixed;
   inset: 0;
+  z-index: 1;
   background-color: hsla(0, 0%, 0%, 0.7);
 }
 .modal__btnClose {
@@ -23,23 +24,40 @@
 }
 
 .task {
+  position: relative;
   height: 2.2em;
   padding-left: 1.5em;
   border-radius: 1.1em/50%;
   line-height: 2.2em;
-  font-size: 1rem;
   background-color: hsl(38, 65%, 82%);
   transition: 200ms background-color;
   user-select: none;
   cursor: pointer;
 }
-.task:hover {
+.task:hover, .task.selected {
   background-color: hsl(38, 65%, 68%);
 }
 .task.marked {
   text-decoration: line-through;
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(0, 0%, 92%);
   cursor: default;
+}
+.task__menu {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 0.5rem);
+}
+.task__btn {
+  background-color: hsl(26, 16%, 57%);
+  color: hsl(0, 0%, 92%);
+  width: 2.2em;
+  height: 2.2em;
+  padding: 0.6rem;
+}
+.task__btn:hover {
+  background-color: hsl(26, 16%, 45%);
 }
 
 .prompt {
@@ -89,6 +107,9 @@
 }
 .btn--cta:hover {
   background-color: hsl(177, 11%, 24%);
+}
+.btn--circle {
+  border-radius: 50%;
 }
 
 .taskContainer {

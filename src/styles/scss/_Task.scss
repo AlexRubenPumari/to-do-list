@@ -3,23 +3,42 @@
 .task {
 	$taskHeight: 2.2em;
 	
+	position: relative;
 	height: $taskHeight;
 	padding-left: 1.5em;
 	border-radius: calc($taskHeight*.5) / 50%;
 	
 	line-height: $taskHeight;
-	font-size: 1rem;
 	background-color: config.$color-1;
 	transition: 200ms background-color;
 	user-select: none;
 	cursor: pointer;
 
-	&:hover {
+	&:hover, &.selected {
 		background-color: config.$color-1-h
 	}
 	&.marked {
 		text-decoration: line-through;
-		background-color: hsl(0, 0%, 95%);
+		background-color: config.$co-white-90;
 		cursor: default;
+	}
+
+	&__menu {
+		display: flex;
+		gap: .5rem;
+		position: absolute;
+		top: 0;
+		left: calc(100% + .5rem);
+	}
+	&__btn {
+		background-color: config.$color-3;
+		color: config.$co-white-90;
+		width: $taskHeight;
+		height: $taskHeight;
+		padding: .6rem;
+
+		&:hover {
+			background-color: config.$color-3-h;
+		}
 	}
 }

@@ -1,15 +1,19 @@
 $border-r-m: .4em;
+$border-r-circle: 50%;
 
 $co-gray-30: hsl(177, 11%, 34%); 
 $co-gray-20: hsl(177, 11%, 24%);
 $co-white-90: hsl(0, 0%, 92%);
 $co-pink-80: hsl(38, 65%, 82%);
 $co-pink-60: hsl(38, 65%, 68%);
+$co-pink-50: hsl(26, 16%, 57%);
+$co-pink-40: hsl(26, 16%, 45%);
 
 $color-1: $co-pink-80;
 $color-1-h: $co-pink-60;
 $color-2: 0;
-$color-3: 0;
+$color-3: $co-pink-50;
+$color-3-h: $co-pink-40;
 $color-4: $co-gray-30;
 $color-4-h: $co-gray-20;
 $color-5: 0;

@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-#Mine
-package-lock.json
+# Temporal files of VS Code and mine
+tempCodeRunnerFile
 *.css.map

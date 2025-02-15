@@ -67,3 +67,7 @@ h1 {
   font-size: 1.1em;
   margin-bottom: .6em;
 }
+svg {
+  display: block;
+  width: 100%;
+}

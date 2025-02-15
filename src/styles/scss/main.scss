@@ -30,6 +30,10 @@
 			background-color: config.$color-4-h;
 		}
 	}
+	&--circle {
+		// padding: 0;
+		border-radius: config.$border-r-circle;
+	}
 }
 
 .taskContainer {
