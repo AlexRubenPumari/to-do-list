@@ -6,28 +6,27 @@ import Task from './Task.jsx'
 export default function TaskContainer() {
   const [tasks, setTasks] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
-  function addTask (taskInput) {
-    const newTasks = [...tasks, taskInput.value]
+  function addTask (task) {
+    const newTasks = [...tasks, task]
     setTasks(newTasks)
-
-    taskInput.value = ''
-    taskInput.focus()
   }
 
   return (
     <>
-      <Modal
-        isOpen={isModalOpen} 
-        isModalToClose
-        onClose={() => setIsModalOpen(false)}
-      >
-        <Prompt 
-          hasValidation
-          label='Tarea' 
-          buttonText='Agregar' 
-          callback={addTask} 
-        />
-      </Modal>
+      { isModalOpen && (
+          <Modal
+            isModalToClose
+            onClose={() => setIsModalOpen(false)}
+          >
+            <Prompt 
+              hasValidation
+              label='Tarea' 
+              buttonText='Agregar' 
+              callback={addTask} 
+            />
+          </Modal> 
+        )
+      }
 
       <section className="taskContainer">
         <div className="taskContainer__body">

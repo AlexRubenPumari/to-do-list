@@ -23,8 +23,8 @@ export default function Task({ children, onOpenModal, tasks, setTasks }) {
   }
   function handleClick () {
     setIsSelected(!isSelected)
-    // const isAnySelectedTask = !!document.querySelector('.task.selected')
-    // if (isAnySelectedTask) setIsSelected(false)
+    const isAnySelectedTask = !!document.querySelector('.task.selected')
+    if (isAnySelectedTask) setIsSelected(false)
   }
   return (
     <>
@@ -48,13 +48,13 @@ export default function Task({ children, onOpenModal, tasks, setTasks }) {
               >
                 <SvgCheck />
               </button> 
-              <button 
+              {/* <button 
                 className="task__btn btn--circle"
                 title="Editar"
                 onClick={onOpenModal}
               >
                 <SvgEdit />
-              </button>
+              </button> */}
               <button 
                 className="task__btn btn--circle"
                 title="Eliminar"

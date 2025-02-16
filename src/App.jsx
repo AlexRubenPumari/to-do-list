@@ -10,21 +10,23 @@ export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(true)
   function changeName (nameInput) {
     setName(nameInput.value === '' ? null : nameInput.value)
-    setIsModalOpen(!isModalOpen)
+    setIsModalOpen(false)
   }
 
   return (
     <>
-      <Modal 
-             isOpen={isModalOpen}
-             isModalToClose 
-             onClose={() => setIsModalOpen(false)}
-      >
-        <Prompt label='Nombre' 
-                buttonText='Continuar' 
-                callback={changeName} 
-        />
-      </Modal>
+      {/* { isModalOpen && (
+          <Modal 
+          isModalToClose 
+          onClose={() => setIsModalOpen(false)}
+          >
+            <Prompt label='Nombre' 
+                    buttonText='Continuar' 
+                    callback={changeName} 
+            />
+          </Modal>
+        )
+      } */}
 
       <h1 style={{ textAlign: 'center' }}>Bienvenido, {name ?? 'Invitado'}!</h1>
       <TaskContainer />
