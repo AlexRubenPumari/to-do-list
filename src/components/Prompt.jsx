@@ -1,18 +1,25 @@
 import { useState } from 'react'
 
-export default function Prompt({ label, buttonText, hasValidation, callback }) {
+export default function Prompt({ 
+                          label, 
+                          buttonText, 
+                          hasValidation, 
+                          callback,
+                          tasks, 
+                        }) {
   const [hasError, setHasError] = useState(false)
   const id = `input${label}`
   function handleClick () {
     const input = document.getElementById(id)
-    if (input.value === '' && hasValidation) {
+    const task = input.value
+    
+    if (hasValidation && task === '') {
       setHasError(true)
     } else {
-      const value = input.value
-      input.value = ''
-      input.focus()
-      callback(value)
+      callback(task, tasks)
     }
+    input.value = ''
+    input.focus()
   }
 
   return (
@@ -24,6 +31,7 @@ export default function Prompt({ label, buttonText, hasValidation, callback }) {
                 placeholder={`Ingrese ${label.toLowerCase()}...`} 
                 autoFocus
                 onFocus={() => setHasError(false)}
+                onChange={() => setHasError(false)}
         />
         {
           hasValidation && (

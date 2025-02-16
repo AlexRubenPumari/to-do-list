@@ -1,7 +1,11 @@
 import SvgCheck from './svg/SvgCheck.jsx'
 import SvgEdit from './svg/SvgEdit.jsx'
 import SvgDelete from './svg/SvgDelete.jsx'
-export default function TasksMenu({handleDblClick, handleClick_btnDelete}) {
+export default function TasksMenu({ 
+                          handleDblClick, 
+                          handleClick_btnEdit,
+                          handleClick_btnDelete,
+                        }) {
   return (
     <div className="task__menu">
       <button
@@ -10,13 +14,12 @@ export default function TasksMenu({handleDblClick, handleClick_btnDelete}) {
         onClick={handleDblClick}>
         <SvgCheck />
       </button>
-      {/* <button 
-                className="task__btn btn--circle"
-                title="Editar"
-                onClick={onOpenModal}
-              >
-                <SvgEdit />
-              </button> */}
+      <button
+        className="task__btn btn--circle"
+        title="Editar"
+        onClick={handleClick_btnEdit}>
+        <SvgEdit />
+      </button>
       <button
         className="task__btn btn--circle"
         title="Eliminar"
