@@ -32,7 +32,17 @@ export default function TaskContainer() {
       <section className="taskContainer">
         <div className="taskContainer__body">
           {
-            tasks.map(task => (<Task key={task}>{task}</Task>))
+            tasks.map(task => (
+                <Task 
+                  key={task}
+                  onOpenModal={() => setIsModalOpen(true)}
+                  tasks={tasks}
+                  setTasks={setTasks}
+                >
+                  {task}
+                </Task>
+              )
+            )
           }
         </div>
         <button 
