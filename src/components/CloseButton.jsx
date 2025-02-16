@@ -1,5 +1,5 @@
-function ButtonClose({ callback, context}) {
-  const buttonClassName = 'btnClose ' + context ?? '' 
+export default function CloseButton ({ classCSS = '', callback }) {
+  const buttonClassName = 'btnClose ' + classCSS
   return (
     <button className={buttonClassName} onClick={callback}>
       <span className="btnClose__symbol">
@@ -9,4 +9,3 @@ function ButtonClose({ callback, context}) {
   )
 }
 
-export default ButtonClose

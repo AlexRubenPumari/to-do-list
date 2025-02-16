@@ -2,12 +2,13 @@
 import TasksMenu from './TasksMenu.jsx'
 import { useState, useEffect } from "react"
 
-export default function Task({ children, 
-                               tasks, 
-                               setTasks,
-                               setModal,
-                               setIsModalOpen,
-                            }) {
+export default function Task({ 
+                          children, 
+                          tasks, 
+                          setTasks,
+                          setModal,
+                          setIsModalOpen,
+                        }) {
   const [isMarked, setIsMarked] = useState(false)
   const [isSelected, setIsSelected] = useState(false)
   useEffect(
@@ -27,26 +28,22 @@ export default function Task({ children,
   }
   function handleClick (e) {
     const isTask = !!e.target.classList.contains('task')
-    if (!isTask) return
-    if (isMarked) return
+    const isAnySelectedTask = !!document.querySelector('.task.selected')
+    if (!isTask || isMarked || (isAnySelectedTask && !isSelected)) return
 
     setIsSelected(!isSelected)
-    const isAnySelectedTask = !!document.querySelector('.task.selected')
-    if (isAnySelectedTask) setIsSelected(false)
   }
   function handleEditBtn () {
     const modalEdit = {
       label: 'Nueva tarea',
       buttonText: 'Guardar',
       function: (editedTask, tasks) => {
-        console.log(editedTask, tasks)
         const newTasks = [...tasks]
         const selectedTask = document.querySelector('.task.selected').innerText
-        console.log(selectedTask)
         const index = newTasks.indexOf(selectedTask)
-        console.log(index)
         newTasks[index] = editedTask
         setTasks(newTasks)
+        setIsModalOpen(false)
       },
     }
     setModal(modalEdit)
@@ -59,17 +56,13 @@ export default function Task({ children,
         onDoubleClick={handleDblClick}
         onClick={handleClick}
       >
-        {
-          children
-        }
-        {
-          (isSelected && !isMarked) && (
+        { children }
+        { (isSelected && !isMarked) && 
             <TasksMenu
-              handleDblClick={handleDblClick}
-              handleClick_btnDelete={handleClick_btnDelete}
-              handleClick_btnEdit={handleEditBtn}
+              markTask={handleDblClick}
+              editTask={handleEditBtn}
+              deleteTask={handleClick_btnDelete}
             />
-          )
         }
       </div>
     </>

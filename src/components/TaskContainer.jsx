@@ -9,9 +9,11 @@ export default function TaskContainer() {
     buttonText: 'Añadir',
     function: addTask,
   }
+  const [modal, setModal] = useState(modalAdd)
   const [tasks, setTasks] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modal, setModal] = useState(modalAdd)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   function addTask(task, tasks) {
     const newTasks = [...tasks, task]
@@ -19,12 +21,15 @@ export default function TaskContainer() {
   }
   function handleClick_btnModal() {
     setModal(modalAdd)
-    setIsModalOpen(true)
+    openModal()
   }
   return (
     <>
       {isModalOpen && (
-        <Modal isModalToClose onClose={() => setIsModalOpen(false)}>
+        <Modal 
+          isModalToClose 
+          onClose={closeModal}
+        >
           <Prompt
             hasValidation
             label={modal.label}
@@ -40,7 +45,7 @@ export default function TaskContainer() {
           {tasks.map(task => (
             <Task
               key={task}
-              onOpenModal={() => setIsModalOpen(true)}
+              onOpenModal={openModal}
               tasks={tasks}
               setTasks={setTasks}
               setModal={setModal}

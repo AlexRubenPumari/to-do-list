@@ -1,15 +1,15 @@
-import ButtonClose from './ButtonClose.jsx'
+import CloseButton from './CloseButton.jsx'
 
 export default function Modal({ 
-                                isModalToClose, 
-                                onClose,
-                                children 
-                              }) {
+                          isModalToClose, 
+                          onClose,
+                          children, 
+                        }) {
   return (
     <div className='modal__overlay'>
-			{isModalToClose && <ButtonClose 
+			{isModalToClose && <CloseButton 
                           callback={onClose} 
-                          context='modal__btnClose' 
+                          classCSS='modal__btnClose' 
                        />
       }
       <form className='modal' onSubmit={e => e.preventDefault()}>

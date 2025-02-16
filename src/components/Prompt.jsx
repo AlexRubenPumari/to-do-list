@@ -4,13 +4,13 @@ export default function Prompt({
                           label, 
                           buttonText, 
                           hasValidation, 
-                          callback,
                           tasks, 
+                          callback,
                         }) {
   const [hasError, setHasError] = useState(false)
-  const id = `input${label}`
+  const inputId = `input${label}`
   function handleClick () {
-    const input = document.getElementById(id)
+    const input = document.getElementById(inputId)
     const task = input.value
     
     if (hasValidation && task === '') {
@@ -24,9 +24,9 @@ export default function Prompt({
 
   return (
     <div className='prompt'>
-      <label htmlFor={id} className="prompt__label">{label}:</label>
+      <label htmlFor={inputId} className="prompt__label">{label}:</label>
       <div className="prompt__inputContainer">
-        <input id={id} 
+        <input id={inputId} 
                 type='text' 
                 placeholder={`Ingrese ${label.toLowerCase()}...`} 
                 autoFocus
