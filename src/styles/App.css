@@ -1,4 +1,4 @@
-.modal__overlay {
+.titleWithButton, .modal__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,6 +124,17 @@
   gap: 4px;
   width: 100%;
   max-width: 20rem;
+}
+
+.titleWithButton {
+  gap: 0.5rem;
+}
+.titleWithButton__title {
+  margin: 0;
+}
+.titleWithButton__btn {
+  width: 2rem;
+  padding: 0.5rem;
 }
 
 /*# sourceMappingURL=App.css.map */

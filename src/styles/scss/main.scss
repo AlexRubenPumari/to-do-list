@@ -31,7 +31,6 @@
 		}
 	}
 	&--circle {
-		// padding: 0;
 		border-radius: config.$border-r-circle;
 	}
 }
@@ -51,5 +50,16 @@
 	}
 }
 
+.titleWithButton {
+	@extend %flex-center;
+	gap: .5rem;
 
+	&__title {
+		margin: 0;
+	}
+	&__btn {
+		width: 2rem;
+		padding: .5rem;
+	}
+}
 

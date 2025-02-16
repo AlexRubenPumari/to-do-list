@@ -60,6 +60,7 @@ input::placeholder {
   display: grid;
   grid-auto-rows: min-content auto;
   height: 100vh;
+  gap: 1rem;
   padding: 2.2rem 0;
 }
 

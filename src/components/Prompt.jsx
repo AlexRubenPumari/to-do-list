@@ -8,10 +8,10 @@ export default function Prompt({ label, buttonText, hasValidation, callback }) {
     if (input.value === '' && hasValidation) {
       setHasError(true)
     } else {
-      const task = input.value
+      const value = input.value
       input.value = ''
       input.focus()
-      callback(task)
+      callback(value)
     }
   }
 
