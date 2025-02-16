@@ -8,11 +8,11 @@ export default function Prompt({
                           callback,
                         }) {
   const [hasError, setHasError] = useState(false)
-  const inputId = `input${label}`
-  function handleClick () {
-    const input = document.getElementById(inputId)
+  function handleSubmit (e) {
+    e.preventDefault()
+    const input = e.target.input
     const task = input.value
-    
+
     if (hasValidation && task === '') {
       setHasError(true)
     } else {
@@ -23,15 +23,16 @@ export default function Prompt({
   }
 
   return (
-    <div className='prompt'>
-      <label htmlFor={inputId} className="prompt__label">{label}:</label>
+    <form className='prompt' onSubmit={handleSubmit}>
+      <label htmlFor='input' className="prompt__label">{label}:</label>
       <div className="prompt__inputContainer">
-        <input id={inputId} 
-                type='text' 
-                placeholder={`Ingrese ${label.toLowerCase()}...`} 
-                autoFocus
-                onFocus={() => setHasError(false)}
-                onChange={() => setHasError(false)}
+        <input 
+          id='input'
+          name='input'
+          placeholder={`Ingrese ${label.toLowerCase()}...`} 
+          onFocus={() => setHasError(false)}
+          onChange={() => setHasError(false)}
+          autoFocus
         />
         {
           hasValidation && (
@@ -45,9 +46,9 @@ export default function Prompt({
         }
       </div>
 
-      <button type='submit' onClick={handleClick} className='btn--cta prompt__btnCta'>
+      <button type='submit' className='btn--cta prompt__btnCta'>
         {buttonText}
       </button>
-    </div>
+    </form>
   )
 }

@@ -12,9 +12,9 @@ export default function Modal({
                           classCSS='modal__btnClose' 
                        />
       }
-      <form className='modal' onSubmit={e => e.preventDefault()}>
+      <div className='modal'>
         { children }
-      </form>
+      </div>
     </div>
   )
 }
