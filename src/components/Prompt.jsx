@@ -9,7 +9,6 @@ export default function Prompt({ label, buttonText, hasValidation, callback }) {
       setHasError(true)
     } else {
       const task = input.value
-      console.log(task)
       input.value = ''
       input.focus()
       callback(task)

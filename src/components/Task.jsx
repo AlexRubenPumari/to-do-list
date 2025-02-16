@@ -1,6 +1,5 @@
-import SvgCheck from './svg/SvgCheck.jsx'
-import SvgEdit from './svg/SvgEdit.jsx'
-import SvgDelete from './svg/SvgDelete.jsx'
+
+import TasksMenu from './TasksMenu.jsx'
 import { useState, useEffect } from "react"
 
 export default function Task({ children, onOpenModal, tasks, setTasks }) {
@@ -38,31 +37,10 @@ export default function Task({ children, onOpenModal, tasks, setTasks }) {
         }
         {
           (isSelected && !isMarked) && (
-            <div
-              className="task__menu"
-            >
-              <button 
-                className="task__btn btn--circle"
-                title="Marcar como completado"
-                onClick={handleDblClick}
-              >
-                <SvgCheck />
-              </button> 
-              {/* <button 
-                className="task__btn btn--circle"
-                title="Editar"
-                onClick={onOpenModal}
-              >
-                <SvgEdit />
-              </button> */}
-              <button 
-                className="task__btn btn--circle"
-                title="Eliminar"
-                onClick={handleClick_btnDelete}
-              >
-                <SvgDelete />
-              </button>
-            </div>
+            <TasksMenu
+              handleDblClick={handleDblClick}
+              handleClick_btnDelete={handleClick_btnDelete}
+            />
           )
         }
       </div>
